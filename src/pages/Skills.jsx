@@ -3,6 +3,30 @@ import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import { skillGroups } from '../data';
 
+function SkillIcon({ skill }) {
+  if (skill.iconText) {
+    return (
+      <div
+        className="grid h-12 w-12 place-items-center border bg-ink/70 font-playfair text-lg font-semibold"
+        style={{
+          borderColor: skill.badgeColor ?? '#6aab30',
+          color: skill.badgeColor ?? '#6aab30',
+        }}
+      >
+        {skill.iconText}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={skill.iconUrl ?? `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
+      alt={skill.name}
+      className="h-12 w-12"
+    />
+  );
+}
+
 export default function Skills() {
   return (
     <Page>
@@ -22,11 +46,7 @@ export default function Skills() {
                   key={`${group.title}-${skill.name}`}
                   className="border border-paper/10 bg-charcoal p-6 transition duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:border-forest-hover"
                 >
-                  <img
-                    src={skill.iconUrl ?? `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
-                    alt={skill.name}
-                    className="h-12 w-12"
-                  />
+                  <SkillIcon skill={skill} />
                   <h3 className="mt-8 font-playfair text-2xl font-semibold text-paper">{skill.name}</h3>
                 </article>
               ))}

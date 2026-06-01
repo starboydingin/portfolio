@@ -1,24 +1,17 @@
-import { useState } from 'react';
 import { Github, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
 import Page from '../components/Page';
 import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 
 const socials = [
-  { label: 'GitHub', href: '#', icon: Github },
-  { label: 'LinkedIn', href: '#', icon: Linkedin },
-  { label: 'Instagram', href: '#', icon: Instagram },
+  { label: 'GitHub', href: 'https://github.com/starboydingin', icon: Github },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adwika-farsha-ardhan', icon: Linkedin },
+  { label: 'Instagram', href: 'https://www.instagram.com/farshaardhan/', icon: Instagram },
 ];
 
+const contactEmail = 'adwikafa@gmail.com';
+
 export default function Contact() {
-  const [status, setStatus] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setStatus('Thank you. Your message placeholder has been validated.');
-    event.currentTarget.reset();
-  };
-
   return (
     <Page>
       <PageHeader
@@ -38,9 +31,9 @@ export default function Contact() {
           </div>
 
           <div className="space-y-4 text-paper/70">
-            <a href="mailto:hello@yourname.com" className="flex items-center gap-3 transition hover:text-forest-hover">
+            <a href={`mailto:${contactEmail}`} className="flex items-center gap-3 transition hover:text-forest-hover">
               <Mail size={19} />
-              hello@yourname.com
+              {contactEmail}
             </a>
             <p className="flex items-center gap-3">
               <MapPin size={19} />
@@ -54,6 +47,8 @@ export default function Contact() {
                 key={label}
                 href={href}
                 aria-label={label}
+                target="_blank"
+                rel="noreferrer"
                 className="grid h-11 w-11 place-items-center border border-paper/12 text-paper/62 transition hover:border-forest-hover hover:text-forest-hover"
               >
                 <Icon size={18} />
@@ -63,7 +58,14 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={120}>
-          <form onSubmit={handleSubmit} className="border border-paper/10 bg-charcoal p-6 sm:p-8">
+          <form
+            action={`https://formsubmit.co/${contactEmail}`}
+            method="POST"
+            className="border border-paper/10 bg-charcoal p-6 sm:p-8"
+          >
+            <input type="hidden" name="_subject" value="New message from portfolio website" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
             <div className="grid gap-5">
               <label className="grid gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-paper/64">
                 Nama
@@ -84,7 +86,6 @@ export default function Contact() {
             >
               Submit
             </button>
-            {status ? <p className="mt-4 text-sm text-forest-hover">{status}</p> : null}
           </form>
         </Reveal>
       </section>

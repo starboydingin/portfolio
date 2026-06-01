@@ -1,9 +1,9 @@
 import { Github, Instagram, Linkedin } from 'lucide-react';
 
 const socials = [
-  { label: 'GitHub', href: '#', icon: Github },
-  { label: 'LinkedIn', href: '#', icon: Linkedin },
-  { label: 'Instagram', href: '#', icon: Instagram },
+  { label: 'GitHub', href: 'https://github.com/starboydingin', icon: Github },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adwika-farsha-ardhan', icon: Linkedin },
+  { label: 'Instagram', href: 'https://www.instagram.com/farshaardhan/', icon: Instagram },
 ];
 
 export default function Footer() {
@@ -17,6 +17,8 @@ export default function Footer() {
               key={label}
               href={href}
               aria-label={label}
+              target="_blank"
+              rel="noreferrer"
               className="grid h-9 w-9 place-items-center border border-paper/10 text-paper/54 transition hover:border-forest-hover hover:text-forest-hover"
             >
               <Icon size={17} />
