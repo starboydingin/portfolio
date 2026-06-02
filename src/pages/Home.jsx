@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Code2, Film, GraduationCap, Mail } from 'lucide-react';
 import ButtonLink from '../components/ButtonLink';
 import Page from '../components/Page';
@@ -9,7 +8,6 @@ import profilePhoto from '../images/adwika.jpg';
 import heroSquare from '../images/hero section kotak.png';
 
 const previewSkills = skillGroups.flatMap((group) => group.skills).slice(0, 6);
-const heroRoles = ['Software Developer', 'UI/UX Designer', 'IT Enthusiast', 'Junior Developer'];
 
 function BentoCard({ children, className = '' }) {
   return (
@@ -22,35 +20,6 @@ function BentoCard({ children, className = '' }) {
 }
 
 export default function Home() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayedRole, setDisplayedRole] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentRole = heroRoles[roleIndex];
-    const finishedTyping = !isDeleting && displayedRole === currentRole;
-    const finishedDeleting = isDeleting && displayedRole === '';
-    const typingDelay = finishedTyping ? 1200 : isDeleting ? 45 : 80;
-
-    const timeoutId = window.setTimeout(() => {
-      if (finishedTyping) {
-        setIsDeleting(true);
-        return;
-      }
-
-      if (finishedDeleting) {
-        setIsDeleting(false);
-        setRoleIndex((currentIndex) => (currentIndex + 1) % heroRoles.length);
-        return;
-      }
-
-      const nextLength = displayedRole.length + (isDeleting ? -1 : 1);
-      setDisplayedRole(currentRole.slice(0, nextLength));
-    }, typingDelay);
-
-    return () => window.clearTimeout(timeoutId);
-  }, [displayedRole, isDeleting, roleIndex]);
-
   return (
     <Page className="pt-0">
       <section className="relative min-h-screen overflow-hidden">
@@ -71,12 +40,8 @@ export default function Home() {
             <h1 className="mt-5 animate-fade-in font-playfair text-5xl font-bold leading-[0.95] text-paper [animation-delay:120ms] sm:text-7xl lg:text-8xl">
               Hi, I'm Adwika
             </h1>
-            <p
-              className="mt-6 min-h-12 max-w-xl animate-fade-in font-playfair text-2xl font-semibold leading-tight text-paper/78 [animation-delay:220ms] sm:text-3xl"
-              aria-live="polite"
-            >
-              <span>{displayedRole}</span>
-              <span className="ml-1 inline-block h-8 w-px translate-y-1 animate-pulse bg-forest-hover sm:h-9" />
+            <p className="mt-6 max-w-xl animate-fade-in text-lg leading-8 text-paper/68 [animation-delay:220ms]">
+              Software Developer
             </p>
             <ButtonLink to="/portfolio" className="mt-9 animate-fade-in [animation-delay:320ms]">
               View My Work
