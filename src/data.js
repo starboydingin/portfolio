@@ -1,19 +1,19 @@
 export const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Skills', path: '/skills' },
-  { label: 'Experience', path: '/experience' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Beranda', path: '/' },
+  { label: 'Tentang', path: '/about' },
+  { label: 'Keahlian', path: '/skills' },
+  { label: 'Pengalaman', path: '/experience' },
+  { label: 'Kontak', path: '/contact' },
 ];
 
 export const portfolioLinks = [
-  { label: 'Projects', path: '/portfolio/web' },
+  { label: 'Proyek', path: '/portfolio/web' },
   { label: 'Video Editing', path: '/portfolio/video' },
 ];
 
 export const skillGroups = [
   {
-    title: 'Languages',
+    title: 'Bahasa Pemrograman',
     skills: [
       { name: 'HTML5', slug: 'html5', color: 'E34F26' },
       {
@@ -28,7 +28,7 @@ export const skillGroups = [
     ],
   },
   {
-    title: 'Frameworks',
+    title: 'Framework & Library',
     skills: [
       { name: 'Laravel', slug: 'laravel', color: 'FF2D20' },
       { name: 'Blade', slug: 'laravel', color: 'FF2D20' },
@@ -38,14 +38,14 @@ export const skillGroups = [
     ],
   },
   {
-    title: 'Database & Backend Services',
+    title: 'Basis Data & Layanan Backend',
     skills: [
       { name: 'MySQL', slug: 'mysql', color: '4479A1' },
       { name: 'Supabase', slug: 'supabase', color: '3FCF8E' },
     ],
   },
   {
-    title: 'Tools',
+    title: 'Alat & Perangkat Lunak',
     skills: [
       { name: 'Figma', slug: 'figma', color: 'F24E1E' },
       { name: 'CapCut', iconText: 'CC', badgeColor: '#f5f5f0' },
@@ -255,26 +255,26 @@ export const videoProjects = [
 export const experiences = [
   {
     period: '2023',
-    title: 'Beginner IT Learner',
-    place: 'University',
-    description: 'Started university and began exploring the IT field by learning programming fundamentals with C++ and Python.',
+    title: 'Awal Pembelajaran TI',
+    place: 'Universitas Lampung',
+    description: 'Memulai masa perkuliahan di jurusan Teknik Informatika dan mendalami dasar-dasar ilmu komputer serta fondasi logika pemrograman menggunakan C++ dan Python.',
   },
   {
     period: '2024',
-    title: 'Web Design & Frontend Learner',
-    place: 'Personal Learning Projects',
-    description: 'Started building simple websites using HTML and CSS while learning to create custom UI designs with Figma.',
+    title: 'Eksplorasi Desain Web & Frontend',
+    place: 'Proyek Belajar Mandiri',
+    description: 'Mulai membangun antarmuka web responsif menggunakan HTML dan CSS sembari mendesain antarmuka UI/UX kustom menggunakan Figma.',
   },
   {
     period: '2025',
-    title: 'Full-Stack & Mobile Development Learner',
-    place: 'Personal and Academic Projects',
-    description: 'Started developing projects using Laravel and ReactJS, while also building several mobile applications with Flutter.',
+    title: 'Pengembangan Full-Stack & Mobile',
+    place: 'Proyek Akademik & Mandiri',
+    description: 'Mengembangkan aplikasi web berbasis Laravel dan ReactJS, serta membangun beragam aplikasi mobile terintegrasi menggunakan Flutter.',
   },
   {
-    period: '2025-Present',
-    title: 'Portfolio Project Developer',
-    place: 'Personal Portfolio Projects',
-    description: 'Actively developing web-based projects featured in the portfolio, focusing on clean interfaces, practical functionality, and modern development workflows.',
+    period: '2025 - Sekarang',
+    title: 'Pengembangan Portofolio & Proyek Solutif',
+    place: 'Pengembangan Portofolio Pribadi',
+    description: 'Aktif mengembangkan proyek web dan mobile nyata dengan fokus pada antarmuka modern yang bersih, fungsionalitas praktis, dan alur pengembangan terkini.',
   },
 ];

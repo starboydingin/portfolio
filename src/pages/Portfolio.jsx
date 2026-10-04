@@ -6,16 +6,16 @@ import Reveal from '../components/Reveal';
 
 const categories = [
   {
-    title: 'Projects',
+    title: 'Proyek Web & Mobile',
     path: '/portfolio/web',
     icon: Code2,
-    description: 'Full-stack web applications, mobile apps, and systems built with Laravel, Flutter, and React.',
+    description: 'Aplikasi web full-stack, aplikasi mobile, dan sistem terintegrasi yang dibangun dengan Laravel, Flutter, dan React.',
   },
   {
     title: 'Video Editing',
     path: '/portfolio/video',
     icon: Film,
-    description: 'Creative video projects edited with professional tools.',
+    description: 'Koleksi Anime Music Video (AMV) kreatif yang disunting dengan sinkronisasi ritme dan alur produksi profesional.',
   },
 ];
 
@@ -23,9 +23,9 @@ export default function Portfolio() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Portfolio"
-        title="Two disciplines, one careful practice."
-        description="Browse web development and video editing projects as separate collections."
+        eyebrow="Portofolio"
+        title="Dua disiplin, satu dedikasi berkarya."
+        description="Jelajahi proyek rekayasa perangkat lunak dan karya video editing dalam koleksi terkurasi."
       />
 
       <section className="mx-auto grid max-w-7xl gap-5 px-5 pb-24 sm:px-8 lg:grid-cols-2">
@@ -39,7 +39,7 @@ export default function Portfolio() {
               <h2 className="mt-24 font-playfair text-5xl font-semibold text-paper">{title}</h2>
               <p className="mt-5 max-w-md text-lg leading-8 text-paper/62">{description}</p>
               <span className="mt-10 inline-flex text-sm font-bold uppercase tracking-[0.2em] text-forest-hover">
-                Open Collection
+                Buka Koleksi
               </span>
             </Link>
           </Reveal>

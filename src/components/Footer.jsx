@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-forest/50 bg-ink px-6 py-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center text-sm text-paper/48 md:flex-row">
-        <p>Built with React + Vite + Tailwind CSS</p>
+        <p>Dibuat dengan React + Vite + Tailwind CSS</p>
         <div className="flex items-center gap-3">
           {socials.map(({ label, href, icon: Icon }) => (
             <a

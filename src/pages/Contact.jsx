@@ -15,18 +15,18 @@ export default function Contact() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Contact"
-        title="Get In Touch"
-        description="Interested in collaborating or have a question? Feel free to reach out."
+        eyebrow="Kontak"
+        title="Hubungi Saya"
+        description="Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya."
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 pb-24 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal className="space-y-8">
           <div>
-            <h2 className="font-playfair text-4xl font-semibold">Let's start a conversation.</h2>
+            <h2 className="font-playfair text-4xl font-semibold">Mari Mulai Percakapan.</h2>
             <p className="mt-5 max-w-xl leading-8 text-paper/62">
-              For project inquiries, collaborations, or academic conversations, use the form or reach out through
-              the links below.
+              Untuk diskusi proyek, peluang kolaborasi, maupun pertukaran ide, silakan gunakan formulir ini atau
+              hubungi tautan di bawah.
             </p>
           </div>
 
@@ -63,28 +63,28 @@ export default function Contact() {
             method="POST"
             className="border border-paper/10 bg-charcoal p-6 sm:p-8"
           >
-            <input type="hidden" name="_subject" value="New message from portfolio website" />
+            <input type="hidden" name="_subject" value="Pesan Baru dari Portofolio Website" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <div className="grid gap-5">
               <label className="grid gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-paper/64">
                 Nama
-                <input className="input-field" name="name" type="text" required placeholder="Your name" />
+                <input className="input-field" name="name" type="text" required placeholder="Nama lengkap Anda" />
               </label>
               <label className="grid gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-paper/64">
                 Email
-                <input className="input-field" name="email" type="email" required placeholder="your@email.com" />
+                <input className="input-field" name="email" type="email" required placeholder="nama@email.com" />
               </label>
               <label className="grid gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-paper/64">
                 Pesan
-                <textarea className="input-field min-h-40 resize-y" name="message" required placeholder="Write your message" />
+                <textarea className="input-field min-h-40 resize-y" name="message" required placeholder="Tuliskan pesan Anda di sini..." />
               </label>
             </div>
             <button
               type="submit"
-              className="mt-6 w-full border border-forest bg-forest px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-paper transition hover:border-forest-hover hover:bg-forest-hover hover:text-ink"
+              className="mt-6 w-full border border-forest bg-forest px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-paper transition hover:border-forest-hover hover:bg-forest-hover hover:text-ink cursor-pointer"
             >
-              Submit
+              Kirim Pesan
             </button>
           </form>
         </Reveal>

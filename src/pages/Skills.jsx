@@ -31,9 +31,9 @@ export default function Skills() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Technical Stack"
-        title="Skills"
-        description="A focused set of languages, frameworks, libraries, and databases used across personal and academic projects."
+        eyebrow="Tech Stack & Alat"
+        title="Keahlian & Kemampuan"
+        description="Daftar bahasa pemrograman, framework, basis data, dan alat pengembangan yang digunakan dalam berbagai proyek akademik dan mandiri."
       />
 
       <section className="mx-auto max-w-7xl space-y-16 px-5 pb-24 sm:px-8">

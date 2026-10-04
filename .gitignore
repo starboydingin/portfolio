@@ -4,7 +4,6 @@ dist
 .vite-dev.err
 *.local
 
-# Large media files (exceeds GitHub 100MB limit)
-*.mp4
-public/videos/*.mp4
+# Original uncompressed video backups
+*.original.mp4
 src/videos/

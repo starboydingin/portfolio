@@ -3,21 +3,21 @@ import PageHeader from '../components/PageHeader';
 import Reveal from '../components/Reveal';
 import profilePhoto from '../images/adwikaserius.jpeg';
 
-const interests = ['Programming', 'Design', 'UI/UX'];
+const interests = ['Pemrograman', 'Desain UI/UX', 'Mobile & Web', 'Video Editing'];
 
 export default function About() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Profile"
-        title="About Me"
-        description="A short introduction to my work across mobile, web, IoT, and data-driven systems."
+        eyebrow="Profil"
+        title="Tentang Saya"
+        description="Pengenalan singkat mengenai dedikasi saya dalam pengembangan mobile, web modern, dan sistem terintegrasi."
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 sm:px-8 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <div className="sticky top-28 h-[34rem] border border-paper/14 bg-charcoal/80 p-4 shadow-editorial">
-            <img src={profilePhoto} alt="Adwika profile" className="h-full w-full object-cover" />
+            <img src={profilePhoto} alt="Foto profil Adwika" className="h-full w-full object-cover" />
             <div className="absolute inset-4 bg-gradient-to-t from-ink/24 via-transparent to-transparent" />
           </div>
         </Reveal>
@@ -25,29 +25,29 @@ export default function About() {
         <Reveal delay={120} className="space-y-10">
           <div className="space-y-6 text-lg leading-8 text-paper/66">
             <p>
-              I am Adwika Farsha Ardhan, an Informatics Engineering student focused on mobile and web
-              development, with a strong interest in IoT systems and data-driven applications.
+              Saya adalah Adwika Farsha Ardhan, mahasiswa Teknik Informatika di Universitas Lampung yang berfokus
+              pada pengembangan aplikasi mobile dan web, dengan minat kuat pada antarmuka pengguna yang bersih serta
+              arsitektur sistem yang andal.
             </p>
             <p>
-              I build applications using Flutter, Dart, Laravel, Node.js, Express.js, MySQL, PostgreSQL, JWT
-              Authentication, MQTT, and ESP32. My work includes health-tech, e-commerce, financial management,
-              smart monitoring, and image processing projects.
+              Saya membangun solusi perangkat lunak menggunakan Flutter, Dart, Laravel, Node.js, Express.js, MySQL,
+              PostgreSQL, dan Tailwind CSS, serta integrasi REST API, WebSocket realtime, dan gateway notifikasi.
             </p>
             <p>
-              Selected projects include GlaucoCare, SmartPot IoT, an MSME financial platform, KpopMerchandise,
-              and a digital image segmentation project.
+              Karya unggulan yang telah saya bangun mencakup platform layanan kedinasan terpadu GELATIK, aplikasi
+              pelacak aktivitas kebugaran FitTrack, toko online Kpop Pocket, dan aplikasi pemantau kesehatan mata GlaucoCare.
             </p>
           </div>
 
           <div>
-            <h2 className="font-playfair text-3xl font-semibold">Education</h2>
+            <h2 className="font-playfair text-3xl font-semibold">Pendidikan</h2>
             <p className="mt-4 border-l border-forest pl-5 text-paper/64">
-              Informatics Engineering, Universitas Lampung (2023 - Present)
+              S1 Teknik Informatika, Universitas Lampung (2023 – Sekarang)
             </p>
           </div>
 
           <div>
-            <h2 className="font-playfair text-3xl font-semibold">Interests</h2>
+            <h2 className="font-playfair text-3xl font-semibold">Minat &amp; Fokus</h2>
             <div className="mt-5 flex flex-wrap gap-3">
               {interests.map((interest) => (
                 <span key={interest} className="border border-forest/60 px-4 py-2 text-sm text-paper/70">
@@ -58,10 +58,10 @@ export default function About() {
           </div>
 
           <div>
-            <h2 className="font-playfair text-3xl font-semibold">Currently</h2>
+            <h2 className="font-playfair text-3xl font-semibold">Aktivitas Terkini</h2>
             <p className="mt-4 leading-8 text-paper/64">
-              Building portfolio-ready mobile and web projects while improving backend development, UI/UX design,
-              IoT integration, and practical software architecture.
+              Membangun proyek aplikasi mobile dan web siap produksi sembari mendalami arsitektur backend,
+              optimalisasi UI/UX interaktif, serta implementasi teknologi pengembangan modern.
             </p>
           </div>
         </Reveal>

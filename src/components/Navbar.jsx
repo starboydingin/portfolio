@@ -28,7 +28,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link to="/" className="font-playfair text-2xl font-semibold tracking-wide text-paper">
-          Adwika Portfolio
+          Portofolio Adwika
         </Link>
 
         <div className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.16em] lg:flex">
@@ -44,7 +44,7 @@ export default function Navbar() {
 
           <div className="group relative py-8">
             <NavLink to="/portfolio" className={`nav-link ${portfolioActive ? 'active' : ''}`}>
-              Portfolio
+              Portofolio
               <ChevronDown size={14} />
             </NavLink>
             <div className="pointer-events-none absolute right-0 top-[4.4rem] w-56 translate-y-2 border border-paper/10 bg-charcoal p-2 opacity-0 shadow-editorial transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isOpen ? 'Tutup menu' : 'Buka menu'}
           onClick={() => setIsOpen((value) => !value)}
           className="grid h-11 w-11 place-items-center border border-paper/12 text-paper transition hover:border-forest-hover hover:text-forest-hover lg:hidden"
         >

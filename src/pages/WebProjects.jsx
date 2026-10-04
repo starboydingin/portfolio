@@ -44,9 +44,9 @@ export default function WebProjects() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Portfolio / Project"
-        title="Project"
-        description="Selected mobile, web, IoT, e-commerce, finance, and image processing projects."
+        eyebrow="Portofolio / Proyek"
+        title="Proyek Web & Mobile"
+        description="Koleksi proyek pilihan mencakup aplikasi mobile, web terintegrasi, e-commerce, dan sistem pemantauan digital."
       />
 
       {/* Compact Project Grid */}
@@ -105,14 +105,14 @@ export default function WebProjects() {
                     className="flex flex-1 items-center justify-center gap-1.5 border border-forest bg-forest px-3 py-2 text-xs font-semibold text-paper transition duration-200 hover:border-forest-hover hover:bg-forest-hover hover:text-ink"
                   >
                     <Info size={14} />
-                    Details
+                    Detail Proyek
                   </button>
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 border border-paper/15 px-3 py-2 text-xs font-semibold text-paper/70 transition duration-200 hover:border-forest-hover hover:text-forest-hover"
-                    aria-label={`View ${project.title} on GitHub`}
+                    aria-label={`Lihat ${project.title} di GitHub`}
                   >
                     <Github size={14} />
                     GitHub
@@ -159,7 +159,7 @@ export default function WebProjects() {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(null)}
-                  aria-label="Close details modal"
+                  aria-label="Tutup modal detail"
                   className="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center border border-paper/15 text-paper/60 transition hover:border-forest-hover hover:bg-forest/20 hover:text-paper cursor-pointer"
                 >
                   <X size={18} />
@@ -176,7 +176,7 @@ export default function WebProjects() {
                         selectedProject.screenshots?.[activeImageIndex]?.url ||
                         selectedProject.image
                       }
-                      alt={`${selectedProject.title} preview screenshot`}
+                      alt={`Tangkapan layar ${selectedProject.title}`}
                       className="h-full w-full object-contain transition duration-300"
                     />
                     {selectedProject.screenshots?.[activeImageIndex]?.label && (
@@ -209,7 +209,7 @@ export default function WebProjects() {
                                 ? 'border-forest-hover ring-2 ring-forest-hover/50'
                                 : 'border-paper/15 opacity-60 hover:border-paper/40 hover:opacity-100'
                             }`}
-                            aria-label={`View ${shot.label}`}
+                            aria-label={`Lihat ${shot.label}`}
                           >
                             <img
                               src={shot.url}
@@ -227,7 +227,7 @@ export default function WebProjects() {
                 <div>
                   <div className="flex items-center gap-1.5 text-[0.72rem] font-bold uppercase tracking-wider text-forest-hover">
                     <Layers size={13} />
-                    <span>Tech Stack &amp; Tools</span>
+                    <span>Tech Stack &amp; Alat</span>
                   </div>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {selectedProject.stack.map((tech) => (
@@ -244,7 +244,7 @@ export default function WebProjects() {
                 {/* Project Explanation / Overview */}
                 <div>
                   <h3 className="font-playfair text-base sm:text-lg font-semibold text-paper">
-                    Tentang Project
+                    Tentang Proyek
                   </h3>
                   <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-paper/75">
                     {selectedProject.fullDescription || selectedProject.description}

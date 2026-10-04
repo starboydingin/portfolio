@@ -7,9 +7,9 @@ export default function Experience() {
   return (
     <Page>
       <PageHeader
-        eyebrow="Timeline"
-        title="Experience"
-        description="A vertical timeline with left-and-right milestones across academic, learning, and project-based experience."
+        eyebrow="Linimasa"
+        title="Pengalaman"
+        description="Linimasa perjalanan akademik, pembelajaran mandiri, dan rekam jejak pengembangan perangkat lunak dari waktu ke waktu."
       />
 
       <section className="mx-auto max-w-6xl px-5 pb-24 sm:px-8">

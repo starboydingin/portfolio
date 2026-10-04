@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
+  AlertCircle,
   ExternalLink,
   Film,
-  Maximize2,
+  Loader2,
   Play,
+  RotateCcw,
   Sparkles,
-  Volume2,
+  VolumeX,
   X,
 } from 'lucide-react';
 import Page from '../components/Page';
@@ -16,6 +18,17 @@ import { videoProjects } from '../data';
 
 export default function VideoEditing() {
   const [activeVideo, setActiveVideo] = useState(null);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef(null);
+
+  // Reset video state when active video changes
+  useEffect(() => {
+    if (activeVideo) {
+      setIsVideoLoading(true);
+      setVideoError(false);
+    }
+  }, [activeVideo]);
 
   // Lock body scroll when video preview modal is open
   useEffect(() => {
@@ -43,10 +56,18 @@ export default function VideoEditing() {
     };
   }, [activeVideo]);
 
+  const handleRetryVideo = () => {
+    setVideoError(false);
+    setIsVideoLoading(true);
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
+  };
+
   return (
     <Page>
       <PageHeader
-        eyebrow="Portfolio / Video Editing"
+        eyebrow="Portofolio / Video Editing"
         title="Video Editing"
         description="Koleksi kurasi karya Anime Music Video (AMV) dengan ritme cepat, sinkronisasi beat presisi, color grading sinematik, dan tipografi dinamis yang dipublikasikan di TikTok."
       />
@@ -61,7 +82,7 @@ export default function VideoEditing() {
                 className="relative aspect-video w-full cursor-pointer overflow-hidden bg-black"
                 role="button"
                 tabIndex={0}
-                aria-label={`Preview ${video.title}`}
+                aria-label={`Putar pratinjau ${video.title}`}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -147,7 +168,7 @@ export default function VideoEditing() {
                     >
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-2.91-1.09 4.82 4.82 0 0 1-1.43-2.43h-.03z" />
                     </svg>
-                    <span>Watch Video</span>
+                    <span>Tonton Video</span>
                     <ExternalLink size={14} className="opacity-80" />
                   </a>
 
@@ -156,10 +177,10 @@ export default function VideoEditing() {
                     type="button"
                     onClick={() => setActiveVideo(video)}
                     className="flex items-center justify-center gap-1.5 rounded-sm border border-paper/20 bg-charcoal/80 px-3.5 py-2.5 text-sm font-medium text-paper transition hover:border-forest hover:text-forest-hover"
-                    title="Preview video di website"
+                    title="Putar pratinjau di website"
                   >
                     <Play size={14} fill="currentColor" />
-                    <span>Preview</span>
+                    <span>Pratinjau</span>
                   </button>
                 </div>
               </div>
@@ -201,25 +222,93 @@ export default function VideoEditing() {
                 <button
                   type="button"
                   onClick={() => setActiveVideo(null)}
-                  className="grid h-8 w-8 place-items-center rounded-sm text-paper/70 transition hover:bg-paper/10 hover:text-paper"
-                  aria-label="Tutup preview video"
+                  className="grid h-8 w-8 place-items-center rounded-sm text-paper/70 transition hover:bg-paper/10 hover:text-paper cursor-pointer"
+                  aria-label="Tutup pratinjau video"
                 >
                   <X size={18} />
                 </button>
               </div>
 
-              {/* HTML5 Video Player */}
-              <div className="relative aspect-video w-full bg-black">
-                <video
-                  src={activeVideo.videoUrl}
-                  poster={activeVideo.thumbnail}
-                  controls
-                  autoPlay
-                  playsInline
-                  className="h-full w-full object-contain"
-                >
-                  Browser Anda tidak mendukung tag video HTML5.
-                </video>
+              {/* HTML5 Video Player Container */}
+              <div className="relative aspect-video w-full bg-black overflow-hidden flex items-center justify-center">
+                {/* Fallback error display */}
+                {videoError ? (
+                  <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-4 bg-charcoal/95 p-6 text-center">
+                    <div className="grid h-12 w-12 place-items-center rounded-full border border-forest-hover/40 bg-forest/20 text-forest-hover">
+                      <AlertCircle size={24} />
+                    </div>
+                    <div className="max-w-md">
+                      <h4 className="font-playfair text-lg font-semibold text-paper">
+                        Pratinjau Video Mengalami Kendala
+                      </h4>
+                      <p className="mt-2 text-xs leading-relaxed text-paper/70">
+                        File video berukuran besar mungkin memerlukan pengaktifan fitur Git LFS pada pengaturan deployment Vercel, atau terjadi gangguan koneksi jaringan.
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
+                      <a
+                        href={activeVideo.tiktokUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-sm border border-forest bg-forest px-4 py-2 text-xs font-semibold text-paper transition hover:border-forest-hover hover:bg-forest-hover hover:text-ink"
+                      >
+                        <ExternalLink size={14} />
+                        <span>Tonton Langsung di TikTok</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={handleRetryVideo}
+                        className="inline-flex items-center gap-1.5 rounded-sm border border-paper/20 px-3.5 py-2 text-xs font-medium text-paper/80 transition hover:border-paper/40 hover:text-paper"
+                      >
+                        <RotateCcw size={13} />
+                        <span>Coba Lagi</span>
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {/* Loading spinner */}
+                    {isVideoLoading && (
+                      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2.5 bg-black/60 backdrop-blur-xs text-paper">
+                        <Loader2 size={28} className="animate-spin text-forest-hover" />
+                        <span className="text-xs font-medium text-paper/75 tracking-wider">
+                          Memuat video...
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Standard HTML5 Video Player */}
+                    <video
+                      key={activeVideo.videoUrl}
+                      ref={videoRef}
+                      controls
+                      autoPlay
+                      muted
+                      playsInline
+                      preload="metadata"
+                      poster={activeVideo.thumbnail}
+                      onLoadedData={() => setIsVideoLoading(false)}
+                      onCanPlay={() => setIsVideoLoading(false)}
+                      onWaiting={() => setIsVideoLoading(true)}
+                      onPlaying={() => setIsVideoLoading(false)}
+                      onError={() => {
+                        setIsVideoLoading(false);
+                        setVideoError(true);
+                      }}
+                      className="h-full w-full object-contain"
+                    >
+                      <source
+                        src={activeVideo.videoUrl}
+                        type="video/mp4"
+                        onError={() => {
+                          setIsVideoLoading(false);
+                          setVideoError(true);
+                        }}
+                      />
+                      Browser Anda tidak mendukung pemutaran video HTML5.
+                    </video>
+                  </>
+                )}
               </div>
 
               {/* Modal Footer / Details */}
@@ -247,7 +336,7 @@ export default function VideoEditing() {
                     href={activeVideo.tiktokUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-sm border border-forest bg-forest px-4 py-2.5 text-xs font-semibold text-paper transition hover:border-forest-hover hover:bg-forest-hover hover:text-ink"
+                    className="inline-flex items-center gap-2 rounded-sm border border-forest bg-forest px-4 py-2.5 text-xs font-semibold text-paper transition hover:border-forest-hover hover:bg-forest-hover hover:text-ink cursor-pointer"
                   >
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-2.91-1.09 4.82 4.82 0 0 1-1.43-2.43h-.03z" />
@@ -259,7 +348,7 @@ export default function VideoEditing() {
                   <button
                     type="button"
                     onClick={() => setActiveVideo(null)}
-                    className="rounded-sm border border-paper/20 px-3.5 py-2 text-xs font-medium text-paper/80 transition hover:bg-paper/10 hover:text-paper"
+                    className="rounded-sm border border-paper/20 px-3.5 py-2 text-xs font-medium text-paper/80 transition hover:bg-paper/10 hover:text-paper cursor-pointer"
                   >
                     Tutup
                   </button>
