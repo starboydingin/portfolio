@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="umkmBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a120e"/>
+      <stop offset="50%" stop-color="#111c16"/>
+      <stop offset="100%" stop-color="#070c09"/>
+    </linearGradient>
+    <linearGradient id="emeraldCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16291e"/>
+      <stop offset="100%" stop-color="#0e1b13"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="barGradRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#umkmBg)"/>
+
+  <!-- Top App Bar -->
+  <rect x="50" y="30" width="1100" height="64" rx="8" fill="#142119" stroke="#10b981" stroke-opacity="0.25"/>
+  <rect x="75" y="47" width="30" height="30" rx="6" fill="#10b981" fill-opacity="0.2"/>
+  <path d="M82 62 L87 55 L93 58 L98 52" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="120" y="70" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Manajemen Keuangan UMKM</text>
+  <text x="430" y="69" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="1">DASHBOARD ARUS KAS</text>
+
+  <rect x="970" y="47" width="155" height="32" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.3"/>
+  <circle cx="988" cy="63" r="4" fill="#34d399"/>
+  <text x="1002" y="68" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="12">Laporan Periode Aktif</text>
+
+  <!-- KPI Cards -->
+  <g transform="translate(50, 114)">
+    <!-- KPI 1 -->
+    <rect width="345" height="110" rx="8" fill="url(#emeraldCard)" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="24" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">TOTAL SALDO USAHA</text>
+    <text x="24" y="70" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Rp 48.720.000</text>
+    <text x="24" y="94" fill="#34d399" font-family="system-ui, sans-serif" font-size="11">▲ +14.2% dari bulan lalu</text>
+
+    <!-- KPI 2 -->
+    <g transform="translate(375, 0)">
+      <rect width="345" height="110" rx="8" fill="url(#emeraldCard)" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="24" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">TOTAL PEMASUKAN</text>
+      <text x="24" y="70" fill="#34d399" font-family="system-ui, sans-serif" font-size="28" font-weight="700">+Rp 24.150.000</text>
+      <text x="24" y="94" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">142 transaksi penjualan</text>
+    </g>
+
+    <!-- KPI 3 -->
+    <g transform="translate(750, 0)">
+      <rect width="350" height="110" rx="8" fill="url(#emeraldCard)" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="24" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">TOTAL PENGELUARAN</text>
+      <text x="24" y="70" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="28" font-weight="700">-Rp 11.430.000</text>
+      <text x="24" y="94" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Operasional &amp; bahan baku</text>
+    </g>
+  </g>
+
+  <!-- Cashflow Chart -->
+  <g transform="translate(50, 245)">
+    <rect width="650" height="380" rx="10" fill="url(#emeraldCard)" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="24" y="38" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Analisis Arus Kas Bulanan</text>
+    <text x="24" y="58" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Perbandingan pemasukan vs beban operasional 6 bulan terakhir</text>
+
+    <!-- Chart Grid -->
+    <line x1="40" y1="320" x2="610" y2="320" stroke="#ffffff" stroke-opacity="0.1"/>
+    <line x1="40" y1="260" x2="610" y2="260" stroke="#ffffff" stroke-opacity="0.05"/>
+    <line x1="40" y1="200" x2="610" y2="200" stroke="#ffffff" stroke-opacity="0.05"/>
+    <line x1="40" y1="140" x2="610" y2="140" stroke="#ffffff" stroke-opacity="0.05"/>
+    <line x1="40" y1="80" x2="610" y2="80" stroke="#ffffff" stroke-opacity="0.05"/>
+
+    <!-- Bars Group: Jan -->
+    <rect x="70" y="150" width="28" height="170" rx="4" fill="url(#barGrad)"/>
+    <rect x="104" y="220" width="28" height="100" rx="4" fill="url(#barGradRed)"/>
+    <text x="88" y="342" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Jan</text>
+
+    <!-- Bars Group: Feb -->
+    <rect x="160" y="130" width="28" height="190" rx="4" fill="url(#barGrad)"/>
+    <rect x="194" y="240" width="28" height="80" rx="4" fill="url(#barGradRed)"/>
+    <text x="178" y="342" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Feb</text>
+
+    <!-- Bars Group: Mar -->
+    <rect x="250" y="110" width="28" height="210" rx="4" fill="url(#barGrad)"/>
+    <rect x="284" y="210" width="28" height="110" rx="4" fill="url(#barGradRed)"/>
+    <text x="268" y="342" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Mar</text>
+
+    <!-- Bars Group: Apr -->
+    <rect x="340" y="140" width="28" height="180" rx="4" fill="url(#barGrad)"/>
+    <rect x="374" y="250" width="28" height="70" rx="4" fill="url(#barGradRed)"/>
+    <text x="358" y="342" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Apr</text>
+
+    <!-- Bars Group: Mei -->
+    <rect x="430" y="90" width="28" height="230" rx="4" fill="url(#barGrad)"/>
+    <rect x="464" y="200" width="28" height="120" rx="4" fill="url(#barGradRed)"/>
+    <text x="448" y="342" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Mei</text>
+
+    <!-- Bars Group: Jun -->
+    <rect x="520" y="70" width="28" height="250" rx="4" fill="url(#barGrad)"/>
+    <rect x="554" y="190" width="28" height="130" rx="4" fill="url(#barGradRed)"/>
+    <text x="538" y="342" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Jun</text>
+  </g>
+
+  <!-- Transactions Table -->
+  <g transform="translate(720, 245)">
+    <rect width="430" height="380" rx="10" fill="url(#emeraldCard)" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="24" y="38" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Transaksi Terakhir</text>
+
+    <!-- Row 1 -->
+    <g transform="translate(24, 60)">
+      <rect width="382" height="52" rx="6" fill="#0b1610" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="16" y="24" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Penjualan Paket Grosir #1042</text>
+      <text x="16" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Kategori: Penjualan Produk • 14:20</text>
+      <text x="280" y="32" fill="#34d399" font-family="system-ui, sans-serif" font-size="13" font-weight="700">+Rp 1.450.000</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(24, 122)">
+      <rect width="382" height="52" rx="6" fill="#0b1610" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="16" y="24" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Restock Bahan Baku Kopi</text>
+      <text x="16" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Kategori: Pengeluaran • 11:15</text>
+      <text x="288" y="32" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="13" font-weight="700">-Rp 680.000</text>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(24, 184)">
+      <rect width="382" height="52" rx="6" fill="#0b1610" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="16" y="24" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Pembayaran Kasir QRIS #1041</text>
+      <text x="16" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Kategori: Penjualan Langsung • 10:05</text>
+      <text x="296" y="32" fill="#34d399" font-family="system-ui, sans-serif" font-size="13" font-weight="700">+Rp 275.000</text>
+    </g>
+
+    <!-- Row 4 -->
+    <g transform="translate(24, 246)">
+      <rect width="382" height="52" rx="6" fill="#0b1610" stroke="#ffffff" stroke-opacity="0.05"/>
+      <text x="16" y="24" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Listrik &amp; Operasional Outlet</text>
+      <text x="16" y="40" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Kategori: Utilitas • Kemarin</text>
+      <text x="288" y="32" fill="#f43f5e" font-family="system-ui, sans-serif" font-size="13" font-weight="700">-Rp 450.000</text>
+    </g>
+
+    <!-- Export Button -->
+    <g transform="translate(24, 312)">
+      <rect width="382" height="42" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.4"/>
+      <text x="115" y="26" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Unduh Rekap Laporan Keuangan (PDF/Excel)</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+node_modules
+dist
+.vite-dev.log
+.vite-dev.err
+*.local
+
+# Large media files (exceeds GitHub 100MB limit)
+*.mp4
+public/videos/*.mp4
+src/videos/
